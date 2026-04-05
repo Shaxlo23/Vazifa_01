@@ -29,3 +29,17 @@ async def user(call:CallbackQuery,db):
     await db.update_role(user_id,role)
     await call.message.answer("Role muvaffaqiyatli o'zgartirildi!!")
     await call.answer()
+
+
+# async def broadcasting(bot, users, message):
+#     succes = 0
+#     failed = 0
+#     for user_id in users:
+#         try:
+#             #Rasm + matn
+#             if message.photo:
+#                 await bot.send_photo(
+#                     chat_id=int(user_id['telegram_id']),
+#                     photo=message.photo[-1].file_id,
+#                     caption=message.caption
+#                 )

@@ -9,6 +9,9 @@ from handlers.start import router as start_router
 from handlers.register import router as register_router
 from handlers.users.profile import router as profile_router
 from handlers.admin.admin import router as admin_router
+from handlers.products.product import router as bozor_router
+from handlers.admin.product import router as admin_product_router
+from handlers.users.product import router as user_product_router
 async def main():
     bot=Bot(token=config.BOT_TOKEN)
     dp=Dispatcher(storage=MemoryStorage())
@@ -21,6 +24,9 @@ async def main():
     dp.include_router(register_router)
     dp.include_router(profile_router)
     dp.include_router(admin_router)
+    dp.include_router(bozor_router)
+    dp.include_router(admin_product_router)
+    dp.include_router(user_product_router)
 
     print("Bot is starting...")
     await dp.start_polling(bot)

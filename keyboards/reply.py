@@ -13,7 +13,7 @@ def start_reply():
     return ReplyKeyboardMarkup(
         keyboard=[
             [KeyboardButton(text="Bozor"),KeyboardButton(text="Mening Buyurtmalarim")],
-            [KeyboardButton(text="Profile")]
+            [KeyboardButton(text="Profile"),KeyboardButton(text="Savatcha")]
         ],
         resize_keyboard=True
     )
