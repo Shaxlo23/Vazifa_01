@@ -39,6 +39,29 @@ def savat_inline(products):
     keyboard=[]
 
     for product in products:
-        keyboard.append([InlineKeyboardButton(text=f"{product['name']} ({product['price']} so'm)",callback_data=f"1"),InlineKeyboardButton(text="❌",callback_data=f"remove_product_{product["id"]}")])
+        keyboard.append([InlineKeyboardButton(text=f"{product["name"] } ({product["price"]} so'm)",callback_data=f"1"),InlineKeyboardButton(text="❌",callback_data=f"remove_product_{product["id"]}")])
+    
+    keyboard.append([InlineKeyboardButton(text="Buyurtma berish",callback_data="order")])
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
+
+
+
+
+def payment_keyboard():
+
+    keyboard = [
+        [
+            InlineKeyboardButton(
+                text="💳 Karta orqali to'lov",
+                callback_data="pay_card"
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="💵 Naqd to'lov",
+                callback_data="pay_cash"
+            )
+        ]
+    ]
 
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
